@@ -22,12 +22,23 @@ const selectors = ui.UISelectors;
 let p1;
 let p2;
 
-function beginPlay() {
+export function beginPlay() {
   p1 = new Player('HUMAN');
   p2 = new Player('CPU');
   p1.target = p2;
   p2.target = p1;
   ui.ui_play();
   turns.beginTurn(p1);
-  playEvents();
 }
+
+// Event Listeners / Handlers (Is there a better spot for these?)
+document.addEventListener('click', function(e) {
+  switch (e.target.id) {
+    case 'start-game':
+      beginPlay();
+      break;
+    case 'end-turn':
+      turns.nextTurn();
+      break;
+  }
+});

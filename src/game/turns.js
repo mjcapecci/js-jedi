@@ -6,7 +6,8 @@ export default function Turns() {
       currentTurn++;
     },
     nextTurn: () => {
-      console.log('hello');
+      currentTurn++;
+      console.log(currentTurn);
     }
   };
 }
