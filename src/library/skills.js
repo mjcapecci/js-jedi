@@ -28,6 +28,14 @@ export default function Skills() {
         buff: null,
         debuff: effects.disoriented(target)
       };
+    },
+    focus: (mult, target) => {
+      return {
+        damage: 0,
+        energy: 0,
+        buff: effects.focused(target),
+        debuff: null
+      };
     }
   };
 }

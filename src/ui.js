@@ -10,8 +10,11 @@ export default function UI() {
     ui_start: () => {
       state.start();
     },
-    ui_play: () => {
-      state.play();
+    ui_play: player => {
+      state.play(player.skillset.skills);
+    },
+    ui_populateSpells: player => {
+      state.play(player.skillset.skills);
     },
     UISelectors
   };

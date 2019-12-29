@@ -14,7 +14,7 @@ export default function State() {
       </div>
       `;
     },
-    play: () => {
+    play: moves => {
       gameContainer.innerHTML = `
       <div class="play-area">
       <h1 id="active-skill">Active Skill</h1>
@@ -24,10 +24,12 @@ export default function State() {
         <div id="player-two" class="player"></div>
       </div>
       <div class="play-area">
-      <button>Move 1</button>
-      <button>Move 2</button>
-      <button>Move 3</button>
-      <button>Move 4</button>
+        <div class="spells">
+          <button id ="move1" class="spell">${moves[0]}</button>
+          <button id ="move2" class="spell">${moves[1]}</button>
+          <button id ="move3" class="spell">${moves[2]}</button>
+          <button id ="move4" class="spell">${moves[3]}</button>
+        </div>
       </div>
       <div class="play-area">
       <button id="end-turn">End Turn</button>

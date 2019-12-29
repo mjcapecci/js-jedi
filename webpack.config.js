@@ -17,6 +17,18 @@ module.exports = {
         query: {
           presets: ['@babel/preset-env']
         }
+      },
+      {
+        test: /\.png$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              limit: 20000,
+              name: 'img/[name].[ext]'
+            }
+          }
+        ]
       }
     ]
   },
@@ -26,5 +38,8 @@ module.exports = {
   devtool: 'source-map',
   performance: {
     hints: false
+  },
+  resolve: {
+    extensions: ['.js', '.scss', 'png']
   }
 };
