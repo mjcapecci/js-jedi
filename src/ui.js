@@ -16,6 +16,7 @@ export default function UI() {
     ui_populateSpells: player => {
       state.play(player.skillset.skills);
     },
+    ui_printCombatLog: () => {},
     UISelectors
   };
 }

@@ -1,5 +1,6 @@
 export default function Turns() {
   let currentTurn = 0;
+
   return {
     checkTurn: () => {
       return currentTurn;
@@ -11,6 +12,18 @@ export default function Turns() {
     nextTurn: nextPlayer => {
       console.log(nextPlayer);
       currentTurn++;
+    },
+    activateSpells: () => {
+      const spellBtns = document.querySelectorAll('.spell');
+      spellBtns.forEach(spell => {
+        spell.disabled = false;
+      });
+    },
+    deactivateSpells: () => {
+      const spellBtns = document.querySelectorAll('.spell');
+      spellBtns.forEach(spell => {
+        spell.disabled = true;
+      });
     }
   };
 }

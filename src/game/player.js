@@ -22,4 +22,7 @@ export default function Player(type) {
   if (type === 'CPU') {
     this.multiplier = 1.5;
   }
+  if (type === 'Dummy') {
+    this.health = 100000;
+  }
 }

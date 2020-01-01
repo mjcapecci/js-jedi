@@ -32,6 +32,8 @@ export default function State() {
         </div>
       </div>
       <div class="play-area">
+        <div id="combat-log"></div>
+      <div class="play-area">
       <button id="end-turn">End Turn</button>
       </div>
       `;
