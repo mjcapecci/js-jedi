@@ -10,7 +10,6 @@ export default function Turns() {
       currentTurn++;
     },
     nextTurn: nextPlayer => {
-      console.log(nextPlayer);
       currentTurn++;
     },
     activateSpells: () => {

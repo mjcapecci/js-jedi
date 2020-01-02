@@ -8,6 +8,7 @@ export default function Player(type) {
   this.energy = 100;
   this.player = null;
   this.target = null;
+  this.standardMultiplier = 1;
   this.multiplier = 1;
   this.skillset = {
     move1: () => skills.slash(this.multiplier, this.target),
@@ -20,6 +21,7 @@ export default function Player(type) {
   this.buffs = {};
   this.debuffs = {};
   if (type === 'CPU') {
+    this.standardMultiplier = 1.5;
     this.multiplier = 1.5;
   }
   if (type === 'Dummy') {
