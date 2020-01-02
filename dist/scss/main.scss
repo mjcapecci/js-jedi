@@ -24,6 +24,11 @@ body {
   justify-content: space-between;
   border-radius: 3px;
 
+  #active-skill {
+    height: 30px;
+    margin-top: 5rem;
+  }
+
   .players {
     display: flex;
     flex-direction: row;
@@ -33,6 +38,10 @@ body {
     margin: 2rem;
     height: 150px;
     width: 100px;
+  }
+
+  .player-area {
+    border: 1px solid red;
   }
 
   .start-area,

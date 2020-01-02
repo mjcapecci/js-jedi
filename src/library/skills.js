@@ -32,8 +32,8 @@ export default function Skills() {
       };
     },
     forcePull: (mult, target) => {
-      const damage = rng(10, 14) * mult;
-      const energy = 20;
+      const damage = 0;
+      const energy = 0;
       const buff = null;
       const debuff = effects.disoriented(target);
       return {
@@ -44,11 +44,15 @@ export default function Skills() {
       };
     },
     focus: (mult, target) => {
+      const damage = 0;
+      const energy = 0;
+      const buff = effects.focused(target);
+      const debuff = null;
       return {
-        damage: 0,
-        energy: 0,
-        buff: effects.focused(target),
-        debuff: null
+        damage,
+        energy,
+        buff,
+        debuff
       };
     }
   };

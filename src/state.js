@@ -1,5 +1,9 @@
 export default function State() {
   const gameContainer = document.querySelector('.content');
+  const clearSpellName = () => {
+    const activeSpellName = document.querySelector('#active-skill');
+    activeSpellName.textContent = '';
+  };
   return {
     start: () => {
       gameContainer.innerHTML = `
@@ -20,8 +24,14 @@ export default function State() {
       <h1 id="active-skill">Active Skill</h1>
       </div>
       <div class="play-area players">
-        <div id="player-one" class="player"></div>
-        <div id="player-two" class="player"></div>
+        <div id="left-player" class="player-area">
+          <div id="player-one-effects"></div>
+          <div id="player-one" class="player"></div>
+        </div>
+        <div id="right-player" class="player-area">
+        <div id="player-two-effects"></div>
+          <div id="player-two" class="player"></div>
+        </div>
       </div>
       <div class="play-area">
         <div class="spells">
@@ -37,6 +47,21 @@ export default function State() {
       <button id="end-turn">End Turn</button>
       </div>
       `;
+    },
+    displaySpellName: spell => {
+      const activeSpellName = document.querySelector('#active-skill');
+      activeSpellName.textContent = spell;
+      let twoSecond_Timeout = setTimeout(() => {
+        clearSpellName();
+      }, 2000);
+    },
+    activateEndTurn: () => {
+      const endTurn = document.querySelector('#end-turn');
+      endTurn.disabled = false;
+    },
+    deactivateEndTurn: () => {
+      const endTurn = document.querySelector('#end-turn');
+      endTurn.disabled = true;
     }
   };
 }

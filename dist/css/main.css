@@ -40,6 +40,11 @@ body {
   border-radius: 3px;
 }
 
+.content #active-skill {
+  height: 30px;
+  margin-top: 5rem;
+}
+
 .content .players {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -55,6 +60,10 @@ body {
   margin: 2rem;
   height: 150px;
   width: 100px;
+}
+
+.content .player-area {
+  border: 1px solid red;
 }
 
 .content .start-area,

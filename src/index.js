@@ -67,6 +67,28 @@ function checkForNextPlayer(p1, p2) {
   }
 }
 
+function turnEnd() {
+  turns.nextTurn(checkForNextPlayer(p1, p2));
+  turns.activateSpells();
+  state.activateEndTurn();
+  purgeEffectsForReApply(p1, p2);
+  decrementEffects(p1, p2);
+  applyEffectsAttempt(p1, p2);
+  console.log(p2.debuffs);
+}
+
+function turnAutoEnd() {
+  setTimeout(turnEnd, 2000);
+}
+
+function executeMove(moveNumber, move) {
+  turns.deactivateSpells();
+  moveNumber;
+  state.displaySpellName(move);
+  state.deactivateEndTurn();
+  turnAutoEnd();
+}
+
 // Console testing utility for UI
 document.addEventListener('click', function(e) {
   console.log(e.target.id);
@@ -79,28 +101,31 @@ document.addEventListener('click', function(e) {
       beginPlay();
       break;
     case 'end-turn':
-      turns.nextTurn(checkForNextPlayer(p1, p2));
-      turns.activateSpells();
-      purgeEffectsForReApply(p1, p2);
-      decrementEffects(p1, p2);
-      applyEffectsAttempt(p1, p2);
+      turnEnd();
       break;
     case 'move1':
-      turns.deactivateSpells();
-      currentPlayer.skillset.move1();
+      executeMove(
+        currentPlayer.skillset.move1(),
+        currentPlayer.skillset.skills[0]
+      );
       break;
     case 'move2':
-      turns.deactivateSpells();
-      currentPlayer.skillset.move2();
+      executeMove(
+        currentPlayer.skillset.move2(),
+        currentPlayer.skillset.skills[1]
+      );
       break;
     case 'move3':
-      turns.deactivateSpells();
-      currentPlayer.skillset.move3();
-      console.log(p2);
+      executeMove(
+        currentPlayer.skillset.move3(),
+        currentPlayer.skillset.skills[2]
+      );
       break;
     case 'move4':
-      turns.deactivateSpells();
-      currentPlayer.skillset.move4();
+      executeMove(
+        currentPlayer.skillset.move3(),
+        currentPlayer.skillset.skills[3]
+      );
       break;
   }
 });
@@ -124,7 +149,6 @@ function decrementEffects(p1, p2) {
 function purgeEffectsForReApply(p1, p2) {
   p1.multiplier = p1.standardMultiplier;
   p2.multiplier = p2.standardMultiplier;
-  console.log(p2.multiplier);
 }
 
 function testForApplyEffects(remainingDuration, effect, effectType, player) {
@@ -132,16 +156,20 @@ function testForApplyEffects(remainingDuration, effect, effectType, player) {
     effects[effect](player);
   } else {
     delete player[effectType][effect];
-    console.log(p2);
-    // console.log(player[effectType][effect]);
   }
 }
 
 function applyEffectsAttempt(p1, p2) {
+  for (let buff in p1.buffs) {
+    testForApplyEffects(p1.buffs[buff], buff, 'buffs', p1);
+  }
+  for (let debuff in p1.debuffs) {
+    testForApplyEffects(p1.debuffs[debuff], debuff, 'debuffs', p1);
+  }
+  for (let buff in p2.buffs) {
+    testForApplyEffects(p2.buffs[buff], buff, 'buffs', p2);
+  }
   for (let debuff in p2.debuffs) {
     testForApplyEffects(p2.debuffs[debuff], debuff, 'debuffs', p2);
-
-    // effects[debuff](p2);
-    // console.log(effects[debuff]);
   }
 }
