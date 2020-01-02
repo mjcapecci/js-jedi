@@ -123,7 +123,7 @@ document.addEventListener('click', function(e) {
       break;
     case 'move4':
       executeMove(
-        currentPlayer.skillset.move3(),
+        currentPlayer.skillset.move4(),
         currentPlayer.skillset.skills[3]
       );
       break;
