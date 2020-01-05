@@ -1,15 +1,15 @@
 ## The required Game Art is as follows:
 
 1.) Darth Vader and all associated animation<br>
-    a.) idle (subtle)<br>
-    b.) slash<br>
-    c.) uppercut<br>
-    d.) force pull<br>
-    e.) focus<br>
+    &nbsp;&nbsp;a.) idle (subtle)<br>
+    &nbsp;&nbsp;b.) slash<br>
+    &nbsp;&nbsp;c.) uppercut<br>
+    &nbsp;&nbsp;d.) force pull<br>
+   &nbsp;&nbsp; e.) focus<br>
 
 2.) Training dummy and all associated animations<br>
-    a.) idle (blowing in the wind)<br>
-    b.) taking damage<br>
+    &nbsp;&nbsp;a.) idle (blowing in the wind)<br>
+    &nbsp;&nbsp;b.) taking damage<br>
 
 3.) Tie Fighter
 
