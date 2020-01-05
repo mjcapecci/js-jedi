@@ -1,5 +1,6 @@
 export default function Animation() {
   const spellDiv = document.querySelector('#active-skill');
+  const gameContainer = document.querySelector('.content');
   return {
     animateSpellName: function(text, i) {
       if (i === text.length) return;
@@ -15,6 +16,6 @@ export default function Animation() {
         letter.classList.remove('enter');
         Animation().animateSpellName(text, (i += 1));
       }, 20);
+    },
     }
-  };
-}
+  }

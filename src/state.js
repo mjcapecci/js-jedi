@@ -2,6 +2,7 @@ import Animation from './animations.js';
 
 export default function State() {
   const gameContainer = document.querySelector('.content');
+  const thirdAnim = document.querySelector('.third-anim')
   const clearSpellName = () => {
     const activeSpellName = document.querySelector('#active-skill');
     activeSpellName.textContent = '';

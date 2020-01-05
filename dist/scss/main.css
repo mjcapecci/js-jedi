@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: url("../img/bg2.png") no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+}
+
+.content-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.first-anim {
+  position: absolute;
+  top: 250px;
+  left: 0%;
+  width: 30px;
+  height: 30px;
+  background: red;
+  opacity: .2;
+  border-radius: 50%;
+  -webkit-animation-name: 'fly';
+          animation-name: 'fly';
+  -webkit-animation-duration: 14s;
+          animation-duration: 14s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  z-index: 0;
+}
+
+.second-anim {
+  position: absolute;
+  bottom: 300px;
+  left: 0%;
+  width: 30px;
+  height: 30px;
+  background: red;
+  opacity: .2;
+  border-radius: 50%;
+  -webkit-animation-name: 'flyReverse';
+          animation-name: 'flyReverse';
+  -webkit-animation-duration: 23s;
+          animation-duration: 23s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  z-index: 0;
+}
+
+.third-anim {
+  content: url("../img/DarthVader3.png");
+  position: absolute;
+  top: 10px;
+  left: 0%;
+  width: 30px;
+  height: 30px;
+  opacity: .2;
+  border-radius: 50%;
+  -webkit-animation-name: 'fly';
+          animation-name: 'fly';
+  -webkit-animation-duration: 30s;
+          animation-duration: 30s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  z-index: 0;
+}
+
+.fourth-anim {
+  position: absolute;
+  bottom: 90px;
+  left: 0%;
+  width: 30px;
+  height: 30px;
+  background: red;
+  opacity: .2;
+  border-radius: 50%;
+  -webkit-animation-name: 'flyReverse';
+          animation-name: 'flyReverse';
+  -webkit-animation-duration: 9s;
+          animation-duration: 9s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  z-index: 1;
+}
+
+@-webkit-keyframes flyReverse {
+  0% {
+    left: 100%;
+  }
+  20% {
+    left: -5%;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+  }
+  60% {
+    left: 100%;
+    content: url("../img/trainingDummy1.png");
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+  }
+  70% {
+    content: url("../img/DarthVader3.png");
+  }
+  100% {
+    content: url("../img/DarthVader3.png");
+    left: -5%;
+  }
+}
+
+@keyframes flyReverse {
+  0% {
+    left: 100%;
+  }
+  20% {
+    left: -5%;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+  }
+  60% {
+    left: 100%;
+    content: url("../img/trainingDummy1.png");
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+  }
+  70% {
+    content: url("../img/DarthVader3.png");
+  }
+  100% {
+    content: url("../img/DarthVader3.png");
+    left: -5%;
+  }
+}
+
+@-webkit-keyframes fly {
+  0% {
+    left: 0%;
+  }
+  20% {
+    left: 100%;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+  }
+  60% {
+    left: -5%;
+    content: url("../img/trainingDummy1.png");
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+  }
+  70% {
+    content: url("../img/DarthVader3.png");
+  }
+  100% {
+    content: url("../img/DarthVader3.png");
+    left: 100%;
+  }
+}
+
+@keyframes fly {
+  0% {
+    left: 0%;
+  }
+  20% {
+    left: 100%;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+  }
+  60% {
+    left: -5%;
+    content: url("../img/trainingDummy1.png");
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+  }
+  70% {
+    content: url("../img/DarthVader3.png");
+  }
+  100% {
+    content: url("../img/DarthVader3.png");
+    left: 100%;
+  }
+}
+
+.content {
+  background: grey;
+  -webkit-box-shadow: inset 0px 0px 30px 5px black;
+          box-shadow: inset 0px 0px 30px 5px black;
+  height: 100vh;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 3px;
+  font-family: 'VT323', monospace;
+  z-index: 1;
+}
+
+.content #active-skill {
+  height: 30px;
+  margin-top: 5rem;
+}
+
+.content .enter {
+  opacity: 0.2;
+  color: #fff;
+}
+
+.content .players {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.content .player {
+  border: 1px solid yellow;
+  margin: 2rem;
+  height: 150px;
+  width: 100px;
+}
+
+.content .player-area {
+  border: 1px solid red;
+}
+
+.content .start-area,
+.content .play-area {
+  margin: 1rem;
+}
+/*# sourceMappingURL=main.css.map */
