@@ -8,7 +8,8 @@
 body {
   width: 100vw;
   height: 100vh;
-  background: url("../img/bg.jpg") no-repeat fixed center;
+  background: url("../img/bg2.png") no-repeat center center fixed;
+  background-size: cover;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -43,6 +44,12 @@ body {
 .content #active-skill {
   height: 30px;
   margin-top: 5rem;
+  font-family: 'VT323', monospace;
+}
+
+.content .enter {
+  opacity: 0.2;
+  color: #fff;
 }
 
 .content .players {

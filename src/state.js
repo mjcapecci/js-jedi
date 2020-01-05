@@ -1,3 +1,5 @@
+import Animation from './animations.js';
+
 export default function State() {
   const gameContainer = document.querySelector('.content');
   const clearSpellName = () => {
@@ -21,7 +23,7 @@ export default function State() {
     play: moves => {
       gameContainer.innerHTML = `
       <div class="play-area">
-      <h1 id="active-skill">Active Skill</h1>
+      <h1 id="active-skill"></h1>
       </div>
       <div class="play-area players">
         <div id="left-player" class="player-area">
@@ -49,8 +51,7 @@ export default function State() {
       `;
     },
     displaySpellName: spell => {
-      const activeSpellName = document.querySelector('#active-skill');
-      activeSpellName.textContent = spell;
+      Animation().animateSpellName(spell);
       let twoSecond_Timeout = setTimeout(() => {
         clearSpellName();
       }, 2000);
