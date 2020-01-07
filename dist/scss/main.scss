@@ -24,7 +24,7 @@ body {
 .death-star {
   content: url('../img/deathStar.png');
   position: absolute;
-  top: 90px;
+  top: 190px;
   right: 5%;
   width: auto;
   height: auto;
@@ -106,21 +106,36 @@ body {
 
 @keyframes deathStar {
   0% {
-    top: 90px;
+    transform: translateY(0px);
   }
   50% {
-    top: 100px;
+    transform: translateY(10px);
   }
   100% {
-    top: px;
+    transform: translateY(0px);
   }
 }
 
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  animation-name: 'content';
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+}
+
+.logo {
+  margin: 1rem;
+}
+
 .content {
-  background: url('../img/Sprite-0003.png') no-repeat center;
+  background: url('../img/trainingPod.gif') no-repeat center center;
   background-size: contain;
   box-shadow: inset 0px 0px 30px 5px black;
-  height: 100vh;
+  height: 880px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -129,15 +144,31 @@ body {
   border-radius: 3px;
   font-family: 'VT323', monospace;
   z-index: 1;
+  animation-name: 'content';
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+
+  @keyframes content {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
 
   #active-skill {
     height: 30px;
     margin-top: 5rem;
+    color: yellow;
   }
 
   .enter {
     opacity: 0.2;
-    color: #fff;
+    color: red;
   }
 
   .players {
@@ -146,7 +177,7 @@ body {
   }
   .player {
     // border: 1px solid yellow;
-    margin: 2rem;
+    margin: 0.5rem;
     height: 45px;
     width: auto;
   }
@@ -157,8 +188,27 @@ body {
     // border: 1px solid red;
   }
 
+  #player-two {
+    transform: translateY(-11px);
+  }
+
   .start-area,
   .play-area {
     margin: 1rem;
   }
+}
+
+button {
+  position: relative;
+  color: yellow;
+  background: transparent;
+  padding: 0.5rem;
+  margin: 1rem;
+  margin-bottom: 4rem;
+  border: 2px solid yellow;
+  font-family: 'VT323', monospace;
+}
+
+button:disabled {
+  border: 2px solid rgba(255, 153, 0, 0.466);
 }

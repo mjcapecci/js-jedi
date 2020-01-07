@@ -1,6 +1,7 @@
 import Animation from './animations.js';
 
 export default function State() {
+  const logoContainer = document.querySelector('.logo-container');
   const gameContainer = document.querySelector('.content');
   const clearSpellName = () => {
     const activeSpellName = document.querySelector('#active-skill');
@@ -8,14 +9,14 @@ export default function State() {
   };
   return {
     start: () => {
-      gameContainer.innerHTML = `
-      <div class="start-area">
-        <h1>Logo</h1>
-      </div>
-      <button id="enter-button">Enter</button>
-      `;
+      if (logoContainer.hasAttribute('style')) {
+        logoContainer.removeAttribute('style');
+      }
+      gameContainer.setAttribute('style', 'display: none;');
     },
     configGame: () => {
+      logoContainer.setAttribute('style', 'display: none;');
+      gameContainer.removeAttribute('style');
       gameContainer.innerHTML = `
       <div class="start-area">
 
@@ -50,7 +51,7 @@ export default function State() {
       <div class="play-area">
         <div id="combat-log"></div>
       <div class="play-area">
-      <button id="end-turn">End Turn</button>
+      <button id="end-turn" style="display: none>End Turn</button>
       </div>
       `;
     },
@@ -59,14 +60,14 @@ export default function State() {
       let twoSecond_Timeout = setTimeout(() => {
         clearSpellName();
       }, 2000);
-    },
-    activateEndTurn: () => {
-      const endTurn = document.querySelector('#end-turn');
-      endTurn.disabled = false;
-    },
-    deactivateEndTurn: () => {
-      const endTurn = document.querySelector('#end-turn');
-      endTurn.disabled = true;
     }
+    // activateEndTurn: () => {
+    //   const endTurn = document.querySelector('#end-turn');
+    //   endTurn.disabled = false;
+    // },
+    // deactivateEndTurn: () => {
+    //   const endTurn = document.querySelector('#end-turn');
+    //   endTurn.disabled = true;
+    // }
   };
 }

@@ -1,6 +1,6 @@
 import Song from '../library/audio/bg.mp3';
 import Vader from '../library/sprites/DarthVader3.png';
-import Dummy from '../library/sprites/trainingDummy1.png';
+import Dummy from '../library/sprites/trainingDummy.png';
 
 export default function Session() {
   const gameContainer = document.querySelector('.content');

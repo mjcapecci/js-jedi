@@ -41,6 +41,18 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.jpg$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              limit: 100000,
+              name: 'img/[name].[ext]'
+            }
+          }
+        ]
       }
     ]
   },
@@ -52,6 +64,6 @@ module.exports = {
     hints: false
   },
   resolve: {
-    extensions: ['.js', '.scss', 'png', '.mp3']
+    extensions: ['.js', '.scss', 'png', '.mp3', '.jpg']
   }
 };
