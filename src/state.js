@@ -2,7 +2,6 @@ import Animation from './animations.js';
 
 export default function State() {
   const gameContainer = document.querySelector('.content');
-  const thirdAnim = document.querySelector('.third-anim')
   const clearSpellName = () => {
     const activeSpellName = document.querySelector('#active-skill');
     activeSpellName.textContent = '';
@@ -11,11 +10,15 @@ export default function State() {
     start: () => {
       gameContainer.innerHTML = `
       <div class="start-area">
-        <h1>Javascript Jedi</h1>
-      </div>
-      <div class="start-area">
         <h1>Logo</h1>
       </div>
+      <button id="enter-button">Enter</button>
+      `;
+    },
+    configGame: () => {
+      gameContainer.innerHTML = `
+      <div class="start-area">
+
       <div class="start-area">
         <button id="start-game">Start Game</button>
       </div>

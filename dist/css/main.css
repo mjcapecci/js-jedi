@@ -26,169 +26,157 @@ body {
           justify-content: center;
 }
 
-.first-anim {
+.death-star {
+  content: url("../img/deathStar.png");
   position: absolute;
-  top: 250px;
+  top: 90px;
+  right: 5%;
+  width: auto;
+  height: auto;
+  -webkit-animation-name: 'deathStar';
+          animation-name: 'deathStar';
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  z-index: 0;
+}
+
+.first-anim {
+  content: url("../img/tie-fighter.png");
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+  position: absolute;
+  top: 90px;
   left: 0%;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   -webkit-animation-name: 'fly';
           animation-name: 'fly';
-  -webkit-animation-duration: 14s;
-          animation-duration: 14s;
+  -webkit-animation-duration: 105s;
+          animation-duration: 105s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   z-index: 0;
 }
 
 .second-anim {
+  content: url("../img/x-wing.png");
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
   position: absolute;
-  bottom: 300px;
+  top: 250px;
   left: 0%;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   -webkit-animation-name: 'flyReverse';
           animation-name: 'flyReverse';
-  -webkit-animation-duration: 23s;
-          animation-duration: 23s;
+  -webkit-animation-duration: 45s;
+          animation-duration: 45s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   z-index: 0;
 }
 
 .third-anim {
-  content: url("../img/DarthVader3.png");
+  content: url("../img/x-wing.png");
   position: absolute;
-  top: 10px;
+  bottom: 300px;
   left: 0%;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   -webkit-animation-name: 'fly';
           animation-name: 'fly';
-  -webkit-animation-duration: 30s;
-          animation-duration: 30s;
+  -webkit-animation-duration: 55s;
+          animation-duration: 55s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   z-index: 0;
 }
 
 .fourth-anim {
+  content: url("../img/tie-fighter.png");
   position: absolute;
   bottom: 90px;
   left: 0%;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   -webkit-animation-name: 'flyReverse';
           animation-name: 'flyReverse';
-  -webkit-animation-duration: 9s;
-          animation-duration: 9s;
+  -webkit-animation-duration: 95s;
+          animation-duration: 95s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   z-index: 1;
 }
 
-@-webkit-keyframes flyReverse {
+@-webkit-keyframes fly {
   0% {
-    left: 100%;
-  }
-  20% {
     left: -5%;
-    -webkit-transform: translateY(40px);
-            transform: translateY(40px);
-  }
-  60% {
-    left: 100%;
-    content: url("../img/trainingDummy1.png");
-    -webkit-transform: translateY(40px);
-            transform: translateY(40px);
-  }
-  70% {
-    content: url("../img/DarthVader3.png");
   }
   100% {
-    content: url("../img/DarthVader3.png");
+    left: 102%;
+  }
+}
+
+@keyframes fly {
+  0% {
+    left: -5%;
+  }
+  100% {
+    left: 102%;
+  }
+}
+
+@-webkit-keyframes flyReverse {
+  0% {
+    left: 102%;
+  }
+  100% {
     left: -5%;
   }
 }
 
 @keyframes flyReverse {
   0% {
-    left: 100%;
-  }
-  20% {
-    left: -5%;
-    -webkit-transform: translateY(40px);
-            transform: translateY(40px);
-  }
-  60% {
-    left: 100%;
-    content: url("../img/trainingDummy1.png");
-    -webkit-transform: translateY(40px);
-            transform: translateY(40px);
-  }
-  70% {
-    content: url("../img/DarthVader3.png");
+    left: 102%;
   }
   100% {
-    content: url("../img/DarthVader3.png");
     left: -5%;
   }
 }
 
-@-webkit-keyframes fly {
+@-webkit-keyframes deathStar {
   0% {
-    left: 0%;
+    top: 90px;
   }
-  20% {
-    left: 100%;
-    -webkit-transform: translateY(40px);
-            transform: translateY(40px);
-  }
-  60% {
-    left: -5%;
-    content: url("../img/trainingDummy1.png");
-    -webkit-transform: translateY(40px);
-            transform: translateY(40px);
-  }
-  70% {
-    content: url("../img/DarthVader3.png");
+  50% {
+    top: 100px;
   }
   100% {
-    content: url("../img/DarthVader3.png");
-    left: 100%;
+    top: px;
   }
 }
 
-@keyframes fly {
+@keyframes deathStar {
   0% {
-    left: 0%;
+    top: 90px;
   }
-  20% {
-    left: 100%;
-    -webkit-transform: translateY(40px);
-            transform: translateY(40px);
-  }
-  60% {
-    left: -5%;
-    content: url("../img/trainingDummy1.png");
-    -webkit-transform: translateY(40px);
-            transform: translateY(40px);
-  }
-  70% {
-    content: url("../img/DarthVader3.png");
+  50% {
+    top: 100px;
   }
   100% {
-    content: url("../img/DarthVader3.png");
-    left: 100%;
+    top: px;
   }
 }
 
 .content {
-  background: grey;
+  background: url("../img/Sprite-0003.png") no-repeat center;
+  background-size: contain;
   -webkit-box-shadow: inset 0px 0px 30px 5px black;
           box-shadow: inset 0px 0px 30px 5px black;
   height: 100vh;
-  width: 50%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -228,14 +216,14 @@ body {
 }
 
 .content .player {
-  border: 1px solid yellow;
   margin: 2rem;
-  height: 150px;
-  width: 100px;
+  height: 45px;
+  width: auto;
 }
 
 .content .player-area {
-  border: 1px solid red;
+  height: auto;
+  width: auto;
 }
 
 .content .start-area,

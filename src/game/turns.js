@@ -5,6 +5,12 @@ export default function Turns() {
     checkTurn: () => {
       return currentTurn;
     },
+    checkForWin: player => {
+      if (player.health <= 0) {
+        alert('Game Over!');
+        return true;
+      }
+    },
     beginTurn: player => {
       player.active = true;
       currentTurn++;

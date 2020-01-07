@@ -31,6 +31,12 @@ let p2;
 let session;
 let currentPlayer;
 
+function enterConfig() {
+  state.configGame();
+  Session().playSong();
+  document.querySelector('#song').play();
+}
+
 // Initialize Gameplay on Click
 function beginPlay() {
   p1 = new Player('HUMAN');
@@ -69,12 +75,16 @@ function checkForNextPlayer(p1, p2) {
 
 function turnEnd() {
   turns.nextTurn(checkForNextPlayer(p1, p2));
+  if (turns.checkForWin(p2)) {
+    init();
+    return;
+  }
   turns.activateSpells();
   state.activateEndTurn();
   purgeEffectsForReApply(p1, p2);
   decrementEffects(p1, p2);
   applyEffectsAttempt(p1, p2);
-  console.log(p2.debuffs);
+  console.log(p2.health);
 }
 
 function turnAutoEnd() {
@@ -97,6 +107,9 @@ document.addEventListener('click', function(e) {
 // Event Listeners / Handlers (Is there a better spot for these?)
 document.addEventListener('click', function(e) {
   switch (e.target.id) {
+    case 'enter-button':
+      enterConfig();
+      break;
     case 'start-game':
       beginPlay();
       break;

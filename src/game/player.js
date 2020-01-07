@@ -25,6 +25,6 @@ export default function Player(type) {
     this.multiplier = 1.5;
   }
   if (type === 'Dummy') {
-    this.health = 100000;
+    this.health = 50;
   }
 }

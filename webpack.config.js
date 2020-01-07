@@ -29,6 +29,18 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.mp3$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              limit: 100000,
+              name: 'audio/[name].[ext]'
+            }
+          }
+        ]
       }
     ]
   },
@@ -40,6 +52,6 @@ module.exports = {
     hints: false
   },
   resolve: {
-    extensions: ['.js', '.scss', 'png']
+    extensions: ['.js', '.scss', 'png', '.mp3']
   }
 };
