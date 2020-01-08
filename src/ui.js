@@ -4,7 +4,10 @@ const state = State();
 export default function UI() {
   const UISelectors = {
     startGame: document.querySelector('#start-game'),
-    endTurn: document.querySelector('#end-turn')
+    endTurn: document.querySelector('#end-turn'),
+    deathStar: document.querySelector('.death-star'),
+    skillList: document.querySelector('.skill-info'),
+    closeList: document.querySelector('.close-list')
   };
   return {
     ui_start: () => {

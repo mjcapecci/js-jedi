@@ -13,6 +13,7 @@ export default function Turns() {
     },
     beginTurn: player => {
       player.active = true;
+      currentTurn = 0;
       currentTurn++;
     },
     nextTurn: nextPlayer => {

@@ -13,10 +13,20 @@ export default function Session() {
     },
     playSong: (song = Song) => {
       gameContainer.innerHTML += `
-      <audio loop id="song">
+      <audio id="song">
         <source src="${song}" type="audio/mp3">
       </audio>
       `;
+    },
+    playSound: (sound = Sound) => {
+      let audio = document.createElement('audio');
+      audio.src = `${sound}`;
+      audio.setAttribute('type', 'audio/mp3');
+      gameContainer.appendChild(audio);
+      audio.play();
+      setTimeout(() => {
+        gameContainer.removeChild(audio);
+      }, 3000);
     },
     training: () => {
       playerOne.innerHTML = `<img src="${Vader}"/>`;

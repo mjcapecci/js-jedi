@@ -38,16 +38,20 @@ function enterConfig() {
 }
 
 // Initialize Gameplay on Click
+let healthValue;
 function beginPlay() {
+  healthValue = document.querySelector('#p2-health').value;
   p1 = new Player('HUMAN');
   p2 = new Player('Dummy');
   p1.player = p1;
   p2.player = p2;
   p1.target = p2;
   p2.target = p1;
+  p2.health = healthValue;
   currentPlayer = p1;
   ui.ui_play(p1);
   turns.beginTurn(p1);
+  state.initGameInfo(healthValue);
   startSession('training');
 }
 
@@ -85,6 +89,8 @@ function turnEnd() {
   decrementEffects(p1, p2);
   applyEffectsAttempt(p1, p2);
   console.log(p2.health);
+  console.log(p1.buffs);
+  console.log(p1.debuffs);
 }
 
 function turnAutoEnd() {
@@ -96,6 +102,7 @@ function executeMove(moveNumber, move) {
   moveNumber;
   state.displaySpellName(move);
   // state.deactivateEndTurn();
+  state.updateGameInfo(turns.checkTurn() + 1, p2.health, healthValue);
   turnAutoEnd();
 }
 
@@ -186,3 +193,11 @@ function applyEffectsAttempt(p1, p2) {
     testForApplyEffects(p2.debuffs[debuff], debuff, 'debuffs', p2);
   }
 }
+
+UI().UISelectors.deathStar.addEventListener('click', () => {
+  UI().UISelectors.skillList.setAttribute('style', 'display: block');
+});
+
+UI().UISelectors.closeList.addEventListener('click', () => {
+  UI().UISelectors.skillList.setAttribute('style', 'display: none');
+});
