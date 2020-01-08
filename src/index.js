@@ -80,8 +80,10 @@ function checkForNextPlayer(p1, p2) {
 function turnEnd() {
   turns.nextTurn(checkForNextPlayer(p1, p2));
   if (turns.checkForWin(p2)) {
-    init();
-    return;
+    setTimeout(() => {
+      init();
+      return;
+    }, 6000);
   }
   turns.activateSpells();
   // state.activateEndTurn();
@@ -99,13 +101,14 @@ function turnAutoEnd() {
   setTimeout(turnEnd, 2000);
 }
 
-function executeMove(moveNumber, move) {
+function executeMove(moveNumber, move, animation) {
   turns.deactivateSpells();
   moveNumber;
   state.displaySpellName(move);
   // state.deactivateEndTurn();
   state.updateGameInfo(turns.checkTurn() + 1, p2.health, healthValue);
   turnAutoEnd();
+  Session().insertAnimation(animation);
 }
 
 // Console testing utility for UI
@@ -128,25 +131,29 @@ document.addEventListener('click', function(e) {
     case 'move1':
       executeMove(
         currentPlayer.skillset.move1(),
-        currentPlayer.skillset.skills[0]
+        currentPlayer.skillset.skills[0],
+        1
       );
       break;
     case 'move2':
       executeMove(
         currentPlayer.skillset.move2(),
-        currentPlayer.skillset.skills[1]
+        currentPlayer.skillset.skills[1],
+        2
       );
       break;
     case 'move3':
       executeMove(
         currentPlayer.skillset.move3(),
-        currentPlayer.skillset.skills[2]
+        currentPlayer.skillset.skills[2],
+        3
       );
       break;
     case 'move4':
       executeMove(
         currentPlayer.skillset.move4(),
-        currentPlayer.skillset.skills[3]
+        currentPlayer.skillset.skills[3],
+        4
       );
       break;
   }

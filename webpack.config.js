@@ -53,6 +53,18 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.gif$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              limit: 100000,
+              name: 'animation/[name].[ext]'
+            }
+          }
+        ]
       }
     ]
   },
@@ -64,6 +76,6 @@ module.exports = {
     hints: false
   },
   resolve: {
-    extensions: ['.js', '.scss', 'png', '.mp3', '.jpg']
+    extensions: ['.js', '.scss', 'png', '.mp3', '.jpg', '.gif']
   }
 };

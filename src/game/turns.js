@@ -7,7 +7,7 @@ export default function Turns() {
     },
     checkForWin: player => {
       if (player.health <= 0) {
-        alert('Game Over!');
+        document.querySelector('#active-skill').textContent = 'Game Over!';
         return true;
       }
     },

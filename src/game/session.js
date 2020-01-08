@@ -2,6 +2,15 @@ import Song from '../library/audio/bg.mp3';
 import Vader from '../library/sprites/DarthVader3.png';
 import Dummy from '../library/sprites/trainingDummy.png';
 
+// Vader Animations
+import vaderSlash from '../library/sprites/DarthVader_slash.gif';
+import vaderUppercut from '../library/sprites/DarthVader_uppercut.gif';
+import vaderPull from '../library/sprites/DarthVader_pull.gif';
+import vaderFocus from '../library/sprites/DarthVader_focus.gif';
+
+// Dummy Animations
+import dummyStars from '../library/sprites/dummyStars.gif';
+
 export default function Session() {
   const gameContainer = document.querySelector('.content');
   const playerOne = document.getElementById('player-one');
@@ -27,6 +36,33 @@ export default function Session() {
       setTimeout(() => {
         gameContainer.removeChild(audio);
       }, 3000);
+    },
+    insertAnimation: move => {
+      switch (move) {
+        case 1:
+          move = [vaderSlash, dummyStars];
+          break;
+        case 2:
+          move = [vaderSlash, dummyStars];
+          break;
+        case 3:
+          move = [vaderPull];
+          break;
+        case 4:
+          move = [vaderFocus];
+          break;
+      }
+
+      setTimeout(() => {
+        playerOne.innerHTML = `<img src="${move[0]}"/>`;
+        if (move[1]) {
+          playerTwo.innerHTML = `<img src="${move[1]}"/>`;
+        }
+      }, 400);
+      setTimeout(() => {
+        playerOne.innerHTML = `<img src="${Vader}"/>`;
+        playerTwo.innerHTML = `<img src="${Dummy}"/>`;
+      }, 1400);
     },
     training: () => {
       playerOne.innerHTML = `<img src="${Vader}"/>`;
