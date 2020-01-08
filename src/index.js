@@ -51,7 +51,7 @@ function beginPlay() {
   currentPlayer = p1;
   ui.ui_play(p1);
   turns.beginTurn(p1);
-  state.initGameInfo(healthValue);
+  state.initGameInfo(healthValue, p1.multiplier);
   startSession('training');
 }
 
@@ -90,15 +90,10 @@ function turnEnd() {
     purgeEffectsForReApply(p1, p2);
     decrementEffects(p1, p2);
     applyEffectsAttempt(p1, p2);
-    console.log(p2.health);
-    console.log(p1.buffs);
-    console.log(p1.debuffs);
   }
 }
 
 function turnAutoEnd() {
-  console.log('S Mult:' + p1.standardMultiplier);
-  console.log('Mult' + p1.multiplier);
   setTimeout(turnEnd, 2000);
 }
 
@@ -107,15 +102,20 @@ function executeMove(moveNumber, move, animation) {
   moveNumber;
   state.displaySpellName(move);
   // state.deactivateEndTurn();
-  state.updateGameInfo(turns.checkTurn() + 1, p2.health, healthValue);
+  state.updateGameInfo(
+    turns.checkTurn() + 1,
+    p2.health,
+    healthValue,
+    p1.multiplier
+  );
   turnAutoEnd();
   Session().insertAnimation(animation);
 }
 
 // Console testing utility for UI
-document.addEventListener('click', function(e) {
-  console.log(e.target.id);
-});
+// document.addEventListener('click', function(e) {
+//   console.log(e.target.id);
+// });
 
 // Event Listeners / Handlers (Is there a better spot for these?)
 document.addEventListener('click', function(e) {

@@ -1,6 +1,6 @@
 import Song from '../library/audio/bg.mp3';
 import Vader from '../library/sprites/DarthVader_slash.gif';
-import Dummy from '../library/sprites/trainingDummy.png';
+import Dummy from '../library/sprites/trainingDummy.gif';
 
 // Spell animations
 import Slash from '../library/sprites/slash.gif';

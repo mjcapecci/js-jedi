@@ -78,21 +78,32 @@ export default function State() {
       </div>
       `;
     },
-    initGameInfo: initialHealth => {
+    initGameInfo: (initialHealth, initialMult) => {
       let infoDiv = document.createElement('div');
       infoDiv.classList.add('infoDiv');
       let turns = document.createElement('h1');
       let health = document.createElement('h1');
+      let mult = document.createElement('h1');
       turns.textContent = 'Turn: 1';
       health.textContent = `Health: ${initialHealth}/${initialHealth}`;
+      mult.textContent = `Multiplier: ${initialMult}`;
       infoDiv.appendChild(turns);
       infoDiv.appendChild(health);
+      infoDiv.appendChild(mult);
       gameContainer.insertBefore(infoDiv, gameContainer.childNodes[7]);
     },
-    updateGameInfo: (currentTurn, currentHealth, initialHealth) => {
+    updateGameInfo: (
+      currentTurn,
+      currentHealth,
+      initialHealth,
+      currentMult
+    ) => {
       let infoDiv = document.querySelector('.infoDiv');
       infoDiv.childNodes[0].textContent = `Turn: ${currentTurn}`;
       infoDiv.childNodes[1].textContent = `Health: ${currentHealth}/${initialHealth}`;
+      infoDiv.childNodes[2].textContent = `Multiplier: ${currentMult.toFixed(
+        2
+      )}`;
     },
     displaySpellName: spell => {
       Animation().animateSpellName(spell);

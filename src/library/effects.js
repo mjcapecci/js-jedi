@@ -12,11 +12,11 @@ export default function Effects() {
     },
     pulled: function(target) {
       const duration = 2;
-      target.multiplier = target.multiplier * 3;
+      target.multiplier = target.multiplier * 3.5;
       this.applyBuff(target, 'pulled', duration);
     },
     focused: function(target) {
-      const duration = 4;
+      const duration = 3;
       target.multiplier = target.multiplier * 2;
       this.applyBuff(target, 'focused', duration);
     },

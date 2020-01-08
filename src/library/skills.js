@@ -17,8 +17,8 @@ export default function Skills() {
       const energy = 10;
       const buff = null;
       const debuff = null;
-      target.health -= damage;
       player.standardMultiplier += 0.1;
+      target.health -= damage;
       Session().playSound(Boink);
       return {
         damage,
@@ -33,7 +33,9 @@ export default function Skills() {
       const buff = null;
       const debuff = effects.tired(player);
       target.health -= damage;
-      player.standardMultiplier -= 0.2;
+      if (player.standardMultiplier > 0.2) {
+        player.standardMultiplier -= 0.2;
+      }
       Session().playSound(Uppercut);
       return {
         damage,
