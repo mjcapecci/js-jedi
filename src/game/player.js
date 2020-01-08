@@ -9,9 +9,9 @@ export default function Player(type) {
   this.player = null;
   this.target = null;
   this.standardMultiplier = 1;
-  this.multiplier = 1;
+  this.multiplier = this.standardMultiplier;
   this.skillset = {
-    move1: () => skills.slash(this.multiplier, this.target),
+    move1: () => skills.slash(this.multiplier, this.target, this.player),
     move2: () => skills.uppercut(this.multiplier, this.target, this.player),
     move3: () => skills.forcePull(this.multiplier, this.player),
     move4: () => skills.focus(this.multiplier, this.player),

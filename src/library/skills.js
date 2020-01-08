@@ -12,12 +12,13 @@ import Focus from './audio/focus.mp3';
 
 export default function Skills() {
   return {
-    slash: (mult, target) => {
-      const damage = rng(4, 8) * mult;
+    slash: (mult, target, player) => {
+      const damage = Math.round(rng(4, 8) * mult);
       const energy = 10;
       const buff = null;
       const debuff = null;
       target.health -= damage;
+      player.standardMultiplier += 0.1;
       Session().playSound(Boink);
       return {
         damage,
@@ -27,11 +28,12 @@ export default function Skills() {
       };
     },
     uppercut: (mult, target, player) => {
-      const damage = rng(10, 14) * mult;
+      const damage = Math.round(rng(10, 14) * mult);
       const energy = 20;
       const buff = null;
       const debuff = effects.tired(player);
       target.health -= damage;
+      player.standardMultiplier -= 0.2;
       Session().playSound(Uppercut);
       return {
         damage,
@@ -43,7 +45,7 @@ export default function Skills() {
     forcePull: (mult, target) => {
       const damage = 0;
       const energy = 0;
-      const buff = effects.buffSlash(target);
+      const buff = effects.pulled(target);
       const debuff = null;
       Session().playSound(Pull);
       return {

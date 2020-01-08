@@ -94,6 +94,8 @@ function turnEnd() {
 }
 
 function turnAutoEnd() {
+  console.log('S Mult:' + p1.standardMultiplier);
+  console.log('Mult' + p1.multiplier);
   setTimeout(turnEnd, 2000);
 }
 

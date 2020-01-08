@@ -10,10 +10,10 @@ export default function Effects() {
         target.buffs[effect] = duration;
       }
     },
-    buffSlash: function(target) {
+    pulled: function(target) {
       const duration = 2;
       target.multiplier = target.multiplier * 3;
-      this.applyBuff(target, 'buffSlash', duration);
+      this.applyBuff(target, 'pulled', duration);
     },
     focused: function(target) {
       const duration = 4;
