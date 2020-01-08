@@ -234,6 +234,12 @@ body {
   margin: 1rem;
 }
 
+.spell-animation {
+  position: absolute;
+  top: 34%;
+  right: 45%;
+}
+
 .content {
   background: url("../img/trainingPod.gif") no-repeat center center;
   background-size: contain;
@@ -317,8 +323,8 @@ body {
 }
 
 .content .player {
-  margin: 0.5rem;
-  margin-top: 5rem;
+  margin: 5rem;
+  margin-top: 7rem;
   height: 45px;
   width: auto;
 }
@@ -334,8 +340,8 @@ body {
 }
 
 .content .spells {
-  -webkit-transform: translateY(80px);
-          transform: translateY(80px);
+  -webkit-transform: translateY(30px);
+          transform: translateY(30px);
 }
 
 .content .start-area {

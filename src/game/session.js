@@ -1,18 +1,16 @@
 import Song from '../library/audio/bg.mp3';
-import Vader from '../library/sprites/DarthVader3.png';
+import Vader from '../library/sprites/DarthVader_slash.gif';
 import Dummy from '../library/sprites/trainingDummy.png';
 
-// Vader Animations
-import vaderSlash from '../library/sprites/DarthVader_slash.gif';
-import vaderUppercut from '../library/sprites/DarthVader_uppercut.gif';
-import vaderPull from '../library/sprites/DarthVader_pull.gif';
-import vaderFocus from '../library/sprites/DarthVader_focus.gif';
-
-// Dummy Animations
-import dummyStars from '../library/sprites/dummyStars.gif';
+// Spell animations
+import Slash from '../library/sprites/slash.gif';
+import Uppercut from '../library/sprites/uppercut.gif';
+import Pull from '../library/sprites/pull.gif';
+import Focus from '../library/sprites/focus.gif';
 
 export default function Session() {
   const gameContainer = document.querySelector('.content');
+  const spellAnimation = document.querySelector('.spell-animation');
   const playerOne = document.getElementById('player-one');
   const playerTwo = document.getElementById('player-two');
   let sessionType;
@@ -40,33 +38,35 @@ export default function Session() {
     insertAnimation: move => {
       switch (move) {
         case 1:
-          move = [vaderSlash, dummyStars];
+          move = Slash;
           break;
         case 2:
-          move = [vaderSlash, dummyStars];
+          move = Uppercut;
           break;
         case 3:
-          move = [vaderPull];
+          move = Pull;
           break;
         case 4:
-          move = [vaderFocus];
+          move = Focus;
           break;
       }
-
       setTimeout(() => {
-        playerOne.innerHTML = `<img src="${move[0]}"/>`;
-        if (move[1]) {
-          playerTwo.innerHTML = `<img src="${move[1]}"/>`;
-        }
-      }, 400);
+        spellAnimation.removeAttribute('style');
+        spellAnimation.innerHTML = `
+        <img src='${move}' />
+        `;
+      }, 100);
       setTimeout(() => {
-        playerOne.innerHTML = `<img src="${Vader}"/>`;
-        playerTwo.innerHTML = `<img src="${Dummy}"/>`;
-      }, 1400);
+        spellAnimation.setAttribute('style', 'display: none');
+      }, 1900);
     },
     training: () => {
-      playerOne.innerHTML = `<img src="${Vader}"/>`;
-      playerTwo.innerHTML = `<img src="${Dummy}"/>`;
+      playerOne.innerHTML = `
+      <img id="v-anim-1" src="${Vader}"/>
+      `;
+      playerTwo.innerHTML = `
+      <img id="dummy" src="${Dummy}"/>
+      `;
       sessionType = 'training';
     }
   };

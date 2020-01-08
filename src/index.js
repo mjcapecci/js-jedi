@@ -84,15 +84,16 @@ function turnEnd() {
       init();
       return;
     }, 6000);
+  } else {
+    turns.activateSpells();
+    // state.activateEndTurn();
+    purgeEffectsForReApply(p1, p2);
+    decrementEffects(p1, p2);
+    applyEffectsAttempt(p1, p2);
+    console.log(p2.health);
+    console.log(p1.buffs);
+    console.log(p1.debuffs);
   }
-  turns.activateSpells();
-  // state.activateEndTurn();
-  purgeEffectsForReApply(p1, p2);
-  decrementEffects(p1, p2);
-  applyEffectsAttempt(p1, p2);
-  console.log(p2.health);
-  console.log(p1.buffs);
-  console.log(p1.debuffs);
 }
 
 function turnAutoEnd() {
