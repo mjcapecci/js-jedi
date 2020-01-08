@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 20px;
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -11,6 +15,7 @@ body {
   background-size: cover;
   overflow: hidden;
   position: relative;
+  font-size: 16px;
 }
 
 .infoDiv {
@@ -45,9 +50,9 @@ body {
 
 .skill-info {
   position: absolute;
-  top: 560px;
+  top: 530px;
   right: 6%;
-  height: 310px;
+  height: 330px;
   width: 250px;
   font-family: 'VT323', monospace;
   color: yellow;
@@ -56,6 +61,7 @@ body {
     padding: 1rem;
   }
   button {
+    margin-top: 0;
     margin-left: 6rem;
   }
 }
@@ -193,6 +199,7 @@ body {
   }
 
   #active-skill {
+    font-size: 3rem;
     height: 30px;
     margin-top: 5rem;
     color: yellow;
@@ -209,9 +216,9 @@ body {
   }
   .player {
     // border: 1px solid yellow;
-    margin: 5rem;
+    margin: 3rem;
 
-    margin-top: 7rem;
+    margin-top: 5rem;
     height: 45px;
     width: auto;
   }
@@ -227,7 +234,7 @@ body {
   }
 
   .spells {
-    transform: translateY(30px);
+    transform: translateY(62px);
   }
 
   .start-area {
@@ -238,15 +245,19 @@ body {
       background: transparent;
       border: 2px solid yellow;
       font-family: 'VT323', monospace;
-      margin-right: 3rem;
+      margin-right: 1rem;
+      font-size: 1rem;
     }
     .config-options {
+      font-size: 1rem;
       display: flex;
-      margin-top: 18rem;
+      flex-direction: row;
+      margin-top: 19rem;
     }
 
     option {
       background: black;
+      font-size: 1rem;
     }
   }
 
@@ -260,6 +271,10 @@ body {
       margin-top: 2rem;
     }
   }
+
+  #start-game {
+    margin-top: 6rem;
+  }
 }
 
 button {
@@ -268,9 +283,10 @@ button {
   background: transparent;
   padding: 0.5rem;
   margin: 1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 6.5rem;
   border: 2px solid yellow;
   font-family: 'VT323', monospace;
+  font-size: 1.1rem;
 }
 
 button:disabled {

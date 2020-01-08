@@ -5,6 +5,10 @@
           box-sizing: border-box;
 }
 
+html {
+  font-size: 20px;
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -12,6 +16,7 @@ body {
   background-size: cover;
   overflow: hidden;
   position: relative;
+  font-size: 16px;
 }
 
 .infoDiv {
@@ -56,9 +61,9 @@ body {
 
 .skill-info {
   position: absolute;
-  top: 560px;
+  top: 530px;
   right: 6%;
-  height: 310px;
+  height: 330px;
   width: 250px;
   font-family: 'VT323', monospace;
   color: yellow;
@@ -70,6 +75,7 @@ body {
 }
 
 .skill-info button {
+  margin-top: 0;
   margin-left: 6rem;
 }
 
@@ -302,6 +308,7 @@ body {
 }
 
 .content #active-skill {
+  font-size: 3rem;
   height: 30px;
   margin-top: 5rem;
   color: yellow;
@@ -323,8 +330,8 @@ body {
 }
 
 .content .player {
-  margin: 5rem;
-  margin-top: 7rem;
+  margin: 3rem;
+  margin-top: 5rem;
   height: 45px;
   width: auto;
 }
@@ -340,8 +347,8 @@ body {
 }
 
 .content .spells {
-  -webkit-transform: translateY(30px);
-          transform: translateY(30px);
+  -webkit-transform: translateY(62px);
+          transform: translateY(62px);
 }
 
 .content .start-area {
@@ -354,18 +361,25 @@ body {
   background: transparent;
   border: 2px solid yellow;
   font-family: 'VT323', monospace;
-  margin-right: 3rem;
+  margin-right: 1rem;
+  font-size: 1rem;
 }
 
 .content .start-area .config-options {
+  font-size: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 18rem;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 19rem;
 }
 
 .content .start-area option {
   background: black;
+  font-size: 1rem;
 }
 
 .content .start-area,
@@ -377,15 +391,20 @@ body {
   margin-top: 2rem;
 }
 
+.content #start-game {
+  margin-top: 6rem;
+}
+
 button {
   position: relative;
   color: yellow;
   background: transparent;
   padding: 0.5rem;
   margin: 1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 6.5rem;
   border: 2px solid yellow;
   font-family: 'VT323', monospace;
+  font-size: 1.1rem;
 }
 
 button:disabled {

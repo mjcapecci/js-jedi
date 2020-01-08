@@ -36,7 +36,7 @@ export default function State() {
           </select>
           <h3>Select Dummy Health:</h3>
           <select id="p2-health">
-            <option value='100'>Little: 100HP (recommended for beginners)</option>
+            <option value='100'>Little: 100HP</option>
             <option value='250'>More: 250HP</option>
             <option value='500'>Much: 500HP</option>
           </select>

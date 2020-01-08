@@ -14,11 +14,12 @@ export default function Skills() {
   return {
     slash: (mult, target, player) => {
       const damage = Math.round(rng(4, 8) * mult);
+      target.health -= damage;
       const energy = 10;
       const buff = null;
       const debuff = null;
-      player.standardMultiplier += 0.1;
-      target.health -= damage;
+      player.standardMultiplier += 0.1 * mult;
+
       Session().playSound(Boink);
       return {
         damage,
@@ -29,10 +30,10 @@ export default function Skills() {
     },
     uppercut: (mult, target, player) => {
       const damage = Math.round(rng(10, 14) * mult);
+      target.health -= damage;
       const energy = 20;
       const buff = null;
       const debuff = effects.tired(player);
-      target.health -= damage;
       if (player.standardMultiplier > 0.2) {
         player.standardMultiplier -= 0.2;
       }

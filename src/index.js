@@ -87,13 +87,13 @@ function turnEnd() {
   } else {
     turns.activateSpells();
     // state.activateEndTurn();
-    purgeEffectsForReApply(p1, p2);
-    decrementEffects(p1, p2);
-    applyEffectsAttempt(p1, p2);
   }
 }
 
 function turnAutoEnd() {
+  purgeEffectsForReApply(p1, p2);
+  decrementEffects(p1, p2);
+  applyEffectsAttempt(p1, p2);
   setTimeout(turnEnd, 2000);
 }
 
@@ -102,13 +102,13 @@ function executeMove(moveNumber, move, animation) {
   moveNumber;
   state.displaySpellName(move);
   // state.deactivateEndTurn();
+  turnAutoEnd();
   state.updateGameInfo(
     turns.checkTurn() + 1,
     p2.health,
     healthValue,
     p1.multiplier
   );
-  turnAutoEnd();
   Session().insertAnimation(animation);
 }
 
