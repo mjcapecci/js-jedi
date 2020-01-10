@@ -83,7 +83,7 @@ function turnEnd() {
     setTimeout(() => {
       init();
       return;
-    }, 6000);
+    }, 4000);
   } else {
     turns.activateSpells();
     // state.activateEndTurn();

@@ -7,6 +7,10 @@
 
 html {
   font-size: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 body {
@@ -386,7 +390,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 19rem;
+  margin-top: 16.5rem;
 }
 
 .content .start-area option {

@@ -25,6 +25,8 @@ export default function State() {
         <h3>Your Objective: Smash the training dummy, and destroy it in as few moves as possible using the provided skills!</h3>
         <br><br>
         <p>Click the Death Star at any time for descriptions of each skill.</p>
+        <br><br>
+        <p>Known high scores: Little - Turn 6 KO / More - Turn 12 KO / Much - Turn 13 KO</p>
       </div>
 
       <div class="start-area">
