@@ -205,9 +205,16 @@ function applyEffectsAttempt(p1, p2) {
 }
 
 UI().UISelectors.deathStar.addEventListener('click', () => {
-  UI().UISelectors.skillList.setAttribute('style', 'display: block');
+  if (!UI().UISelectors.deathStar.hasAttribute('data-open')) {
+    UI().UISelectors.deathStar.setAttribute('data-open', 'true');
+    UI().UISelectors.skillList.setAttribute('style', 'display: block');
+  } else {
+    UI().UISelectors.deathStar.removeAttribute('data-open');
+    UI().UISelectors.skillList.setAttribute('style', 'display: none');
+  }
 });
 
 UI().UISelectors.closeList.addEventListener('click', () => {
+  UI().UISelectors.deathStar.removeAttribute('data-open');
   UI().UISelectors.skillList.setAttribute('style', 'display: none');
 });

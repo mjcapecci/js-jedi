@@ -24,6 +24,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .infoDiv h1 {
@@ -68,6 +72,10 @@ body {
   font-family: 'VT323', monospace;
   color: yellow;
   border: 2px solid yellow;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .skill-info h4 {
@@ -349,6 +357,10 @@ body {
 .content .spells {
   -webkit-transform: translateY(62px);
           transform: translateY(62px);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .content .start-area {
@@ -385,6 +397,10 @@ body {
 .content .start-area,
 .content .play-area {
   margin: 1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .content .start-area h1 {
@@ -405,6 +421,10 @@ button {
   border: 2px solid yellow;
   font-family: 'VT323', monospace;
   font-size: 1.1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 button:disabled {
