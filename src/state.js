@@ -26,7 +26,7 @@ export default function State() {
         <br><br>
         <p>Click the Death Star at any time for descriptions of each skill.</p>
         <br><br>
-        <p>Known high scores: Little - Turn 6 KO / More - Turn 12 KO / Much - Turn 13 KO</p>
+        <p>Known high scores: Little - Turn 5 KO / More - Turn 12 KO / Much - Turn 13 KO</p>
       </div>
 
       <div class="start-area">
