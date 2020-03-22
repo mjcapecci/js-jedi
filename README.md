@@ -43,4 +43,4 @@ export default function Player(type) {
 This function is instantiated by providing the "type" of player that must be created. This.player and this.target are determined programatically at the beginning of a new game instance. Expansion of this game to enable "Characters" with varying skillsets would require basic refactoring of this function such that skills are not baked into the class.
 
 ## Authors
-Game design, art, music by Michael Capecci. Inspiration for art pulled from image results for the "Star Wars pixel art" Google query. The song that plays at the beginning is a personal recording of "Force Theme" written by John Williams.
+Code, game design, art, music by Michael Capecci. Inspiration for art pulled from image results for the "Star Wars pixel art" Google query. The song that plays at the beginning is a personal recording of "Force Theme" written by John Williams.
