@@ -247,6 +247,8 @@ body {
           animation-duration: 7s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
+  font-family: 'VT323', monospace;
+  color: yellow;
 }
 
 .logo {
